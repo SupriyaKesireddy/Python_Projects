@@ -24,7 +24,7 @@ b) Cheetah
 c) Lion
 d) Deer"""
 print("Welcome to my Game")
-playing = input("Do you want to play game? Please type Y for yes and N for no : ")
+playing = input("Do you want to play game? Please type Y for yes and N for no : ").lower()
 if playing != "y":
     print("Bye")
     quit()
@@ -33,12 +33,24 @@ questions = {q1: "d", q2: "c", q3: "a",
                  q4: "b", q5: "a"}
 score = 0
 for i in questions:
+    print()
+    get_out = input("Type Q if you want to quit the game or N to continue: ").lower()
+    if get_out == "q":
+        break
+        print("your current score is: ", score)
     print(i)
-    answer = input("please select the option: ")
+    next = input("if you want to skip this question please enter y or n: ").lower()
+    if next != "n":
+        continue
+    answer = input("please select the option: ").lower()
     if answer == questions[i]:
         print("You got it correct and 10 points will be added to your score :)")
         score +=10
+        print("Your current score is: ", score)
     else:
         print("It's an incorrect answer and you lost 10 points ^_^")
         score -=10
+        print("your current score is: ", score)
+    
+
 print("your final score is: ", score)
