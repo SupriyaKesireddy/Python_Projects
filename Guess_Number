@@ -1,9 +1,12 @@
+#ramdom function to call numbers randomly
 import random
 
-numbers = random.randrange(21)
+#assigning a variable with randrange/randint
+numbers = random.randint(21)
 print(numbers)
 attempts = 0
 
+#looping this in while loop to repeat the process untill the attempts are finished
 while True:
         attempts += 1
         if attempts > 5 :
@@ -11,22 +14,28 @@ while True:
 The correct number is {numbers}
 Good luck next time""")
              break
+
         guess = input("Please type an integer: ")
+
+#making sure the user is not inputing the string when giving the number
         if guess.isdigit():
+
+#converting the number given in olp to integer by using int keyword
             guess = int(guess)
 
+#the below if conditions are to verify if the userhas giving greater than 0 and not giving a string, if they giving any of these the process repeats asking for a number
             if guess<=0:
-                print("Please give a number which is greater than 0 in you next guess")
-                
+                print("Please give a number which is greater than 0 in you next guess")        
         else:
             print("This game accepts only integers")
             continue
 
+#it gives 5 chances  to guess correct, if it is correct it will display at what attempt we guessed it, or it gives hints if we are above or below the number and lastly it is not correct it will provide the answer
         if numbers == guess:
             print("Yay!! you guessed it correct")
             break
-        if guess > numbers:
+        elif guess > numbers:
             print("You guessed high")
-        if guess < numbers:
+        else:
             print("You guessed low")
-        continue
+            continue
