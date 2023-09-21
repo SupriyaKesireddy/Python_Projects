@@ -1,0 +1,32 @@
+import random
+
+numbers = random.randrange(21)
+print(numbers)
+attempts = 0
+
+while True:
+        attempts += 1
+        if attempts > 5 :
+             print(f"""You didn't guess it right in given attempts :(
+The correct number is {numbers}
+Good luck next time""")
+             break
+        guess = input("Please type an integer: ")
+        if guess.isdigit():
+            guess = int(guess)
+
+            if guess<=0:
+                print("Please give a number which is greater than 0 in you next guess")
+                
+        else:
+            print("This game accepts only integers")
+            continue
+
+        if numbers == guess:
+            print("Yay!! you guessed it correct")
+            break
+        if guess > numbers:
+            print("You guessed high")
+        if guess < numbers:
+            print("You guessed low")
+        continue
