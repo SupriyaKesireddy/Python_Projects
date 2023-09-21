@@ -2,7 +2,7 @@
 import random
 
 #assigning a variable with randrange/randint
-numbers = random.randint(21)
+numbers = random.randint(1, 21)
 print(numbers)
 attempts = 0
 
@@ -32,7 +32,7 @@ Good luck next time""")
 
 #it gives 5 chances  to guess correct, if it is correct it will display at what attempt we guessed it, or it gives hints if we are above or below the number and lastly it is not correct it will provide the answer
         if numbers == guess:
-            print("Yay!! you guessed it correct")
+            print(f"Yay!! you guessed it correct in {attempts} guess/guesses")
             break
         elif guess > numbers:
             print("You guessed high")
